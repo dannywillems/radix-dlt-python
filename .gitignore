@@ -107,3 +107,4 @@ ENV/
 *.pid
 .pytest_cache/
 .idea
+notes
