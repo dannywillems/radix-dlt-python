@@ -6,11 +6,7 @@ import base58
 import six
 
 from radixdlt.crypto.utils import double_sha256
-from radixdlt.utils.compat import convert_to_bytes
-
-
-if six.PY3:
-    unicode = str
+from radixdlt.utils.compat import convert_to_bytes, unicode
 
 
 class InvalidAddressError(Exception):

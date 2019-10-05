@@ -6,7 +6,7 @@ python:
   - "3.6"
   - "3.7"
 before_script:
-  - apt-get install pylint
+  - sudo apt-get install pylint
 install:
   - pip install -e .
 script:
