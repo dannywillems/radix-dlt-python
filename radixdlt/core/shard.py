@@ -3,4 +3,3 @@ class Shard:
         assert low < high
         self.low = low
         self.high = high
-

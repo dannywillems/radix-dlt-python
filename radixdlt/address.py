@@ -29,8 +29,8 @@ class AbstractAddress(six.with_metaclass(ABCMeta)):
         elif isinstance(address, bytes):
             return address
         else:
-            raise InvalidAddressError("The address must be given as a 'str', a 'unicode' or a 'bytes' type, %s "
-                                      "given" % type(address))
+            raise InvalidAddressError("The address must be given as a 'str', a 'unicode' or a "
+                                      "'bytes' type, %s given" % type(address))
 
     @classmethod
     def is_valid(cls, address):

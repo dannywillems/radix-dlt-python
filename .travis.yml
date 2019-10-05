@@ -5,10 +5,9 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
-before_script:
-  - sudo apt-get install pylint
 install:
   - pip install -e .
+  - pip install flake8
 script:
+  - flake8 --exclude radixdlt/universe/alphanet_raw.py,radixdlt/universe/sunstone_raw.py,.eggs
   - python setup.py test
-  - pylint **/*.py
