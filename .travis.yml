@@ -9,5 +9,5 @@ install:
   - pip install -e .
   - pip install flake8
 script:
-  - flake8 --exclude radixdlt/universe/alphanet_raw.py,radixdlt/universe/sunstone_raw.py,.eggs
+  - flake8 --exclude radixdlt/universe/alphanet_raw.py,radixdlt/universe/sunstone_raw.py,.eggs -max-line-length=120
   - python setup.py test
