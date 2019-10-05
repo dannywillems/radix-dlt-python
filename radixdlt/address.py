@@ -1,6 +1,6 @@
 import binascii
-import hashlib
-from abc import ABC
+from abc import ABCMeta
+
 import secp256k1
 import base58
 import six
@@ -17,10 +17,11 @@ class InvalidAddressError(Exception):
     pass
 
 
-class AbstractAddress(ABC):
+class AbstractAddress(six.with_metaclass(ABCMeta)):
     UNIVERSE = None
 
     def __init__(self, public_key):
+        assert self.UNIVERSE is not None
         assert isinstance(public_key, secp256k1.PublicKey)
         self.public_key = public_key
 
@@ -43,7 +44,7 @@ class AbstractAddress(ABC):
             double_hashed = binascii.hexlify(double_sha256(decoded_address[:-4]))
             checksum = binascii.hexlify(decoded_address)
             return double_hashed[0:8] == checksum[len(checksum) - 8:]
-        except Exception as e:
+        except Exception:
             return False
 
     @classmethod
