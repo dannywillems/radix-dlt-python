@@ -8,6 +8,8 @@ python:
 install:
   - pip install -e .
   - pip install flake8
+  - pip install coveralls
 script:
   - flake8 --exclude radixdlt/universe/alphanet_raw.py,radixdlt/universe/sunstone_raw.py,.eggs --max-line-length=120
-  - python setup.py test
+  - coverage run --source=radixdlt setup.py test
+  - coveralls
