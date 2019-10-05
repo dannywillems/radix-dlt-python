@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
-import sys
 
-excluded_packages = ['logs', 'tests']
+excluded_packages = ['tests']
 
 setup(
     name='radixdlt',

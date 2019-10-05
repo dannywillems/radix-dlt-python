@@ -44,7 +44,6 @@ class AbstractAddress(ABC):
             checksum = binascii.hexlify(decoded_address)
             return double_hashed[0:8] == checksum[len(checksum) - 8:]
         except Exception as e:
-            print(e)
             return False
 
     @classmethod
